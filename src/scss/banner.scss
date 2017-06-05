@@ -1,0 +1,22 @@
+.banner {
+  display: flex;
+  min-height: 95vh;
+  background: linear-gradient(135deg, rgba(191, 46, 85, 0.8) 0%, rgba(11, 51, 60, 0.4) 30%), linear-gradient(180deg, rgba(191, 46, 85, 0.8) 0%, rgba(11, 51, 60, 0.4) 30%), url('https://unsplash.it/700/400');
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+
+  h1 {
+    font-family: "Antenna Cond",Impact,"Arial Black",sans-serif;
+    font-weight: 200;
+    font-size: 60px;
+
+    @include responsive ('xs') {
+      font-size: 32px;
+    };
+  }
+}

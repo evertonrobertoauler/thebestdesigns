@@ -1,0 +1,74 @@
+.button {
+  background-color: #bf2e55;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Antenna Cond', Impact, 'Arial Black', sans-serif;
+  font-size: 14px;
+  line-height: 17.5px;
+  padding: 10px;
+  width: 175px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  transform: translate(0, 0);
+  z-index: 0;
+  border: none;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    transform: translate(-4px, -4px);
+
+    &::before {
+      transform: translate(4px, 4px);
+    }
+
+    &::after {
+      transform: translate(0, 0);
+    }
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+    transform: translate(0, 0);
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: #8a3950;
+  }
+
+  &::after {
+    background-color: #bf2e55;
+  }
+
+}
+
+.icon-button {
+  background-color: #bf2e55;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Antenna Cond', Impact, 'Arial Black', sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background-color: #8a3950;
+  }
+}

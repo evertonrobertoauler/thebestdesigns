@@ -1,0 +1,158 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 24px 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: all .7s ease;
+  z-index: 2;
+
+  &.top.show {
+    background-color: transparent;
+  }
+
+  &.show:not(.top) {
+    background-color: #0b333c;
+  }
+
+  &.hide {
+    transform: translateY(-100px);
+
+    .buttons {
+      transform: translateY(100px);
+    }
+  }
+
+  .title {
+    margin: 0;
+    font-weight: lighter;
+    flex: 1 0 auto;
+  }
+
+  .tabs {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 180px;
+    font-size: 14px;
+
+    a {
+      text-transform: uppercase;
+      padding: 0 12px;
+      list-style: none;
+      margin-bottom: 2px;
+      text-decoration: none;
+      color: white;
+      padding-bottom: 2px;
+
+      &:focus,
+      &:hover {
+        color: #bf2e55;
+        border-bottom: 2px solid #bf2e55;
+        margin-bottom: 0;
+        outline: none;
+      }
+    }
+
+  }
+
+  .buttons {
+    display: flex;
+    transition: all .7s ease;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 2;
+
+    .close-button,
+    .menu-button {
+      display: none;
+    }
+
+    @include responsive-lt ('md') {
+      .menu-button {
+        display: initial;
+      }
+    }
+
+    @include responsive ('xs') {
+      right: 0;
+
+      .contact-button {
+        display: none;
+      }
+    }
+  }
+
+  @include responsive-lt ('md') {
+    &.show:not(.top) {
+      background-color: transparent;
+    }
+
+    .tabs {
+      display: none;
+    }
+  }
+
+  @include responsive ('xs') {
+    &.show:not(.top) {
+      .title {
+        display: none;
+      }
+    }
+  }
+}
+
+@include responsive-lt ('md') {
+  .menu-open {
+    overflow: hidden;
+
+    .navbar {
+      &.hide {
+        transform: translateY(0);
+
+        .buttons {
+          transform: translateY(0);
+        }
+      }
+
+      .tabs {
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        font-size: 36px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        max-height: 100vh;
+        height: 100vh;
+        width: 100%;
+        background-color: #0b333c;
+        z-index: 2;
+      }
+
+      .buttons {
+        z-index: 3;
+
+        .contact-button,
+        .menu-button {
+          display: none;
+        }
+
+        .close-button {
+          display: initial;
+        }
+      }
+    }
+
+    .button {
+      z-index: -1;
+    }
+  }
+}
