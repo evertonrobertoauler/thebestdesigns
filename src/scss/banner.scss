@@ -1,0 +1,58 @@
+.banner {
+  position: relative;
+  background-image: url("./assets/katrina.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  &::before {
+    background: linear-gradient(#4f4ea0, #6e66cb);
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+  &::after {
+    background: inherit;
+    mix-blend-mode: overlay;
+    content: '';
+    display: block;
+    opacity: .6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+  .inner {
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 96px 0 64px;
+    height: 100%;
+    z-index: 1;
+
+    .watch-video {
+      padding: 6px 6px 2px;;
+      background-color: #524ba2;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      .fa-play {
+        color: #524ba2;
+        background-color: white;
+        border-radius: 50%;
+        padding: 5px 4px 5px 7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+// .row {
+//   width: 100%;
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// }
+
+// .col {
+//   width: 100%;
+//   box-sizing: border-box;
+//   padding: 2px;
+// }
+
+// // Globals
+// @include hide(".hide");
+// @include grid-cols(".col");
+
+// // Responsive
+// @each $breakpoint, $sizes in $breakpoints {
+//    @include responsive($breakpoint){
+//     @include hide(".hide-#{$breakpoint}");
+//     @include grid-cols(".col-#{$breakpoint}");
+//   }
+// }
+// @each $breakpoint, $size in $breakpoints-lt {
+//    @include responsive-lt($breakpoint){
+//     @include hide(".hide-lt-#{$breakpoint}");
+//     @include grid-cols(".col-lt-#{$breakpoint}");
+//   }
+// }
+// @each $breakpoint, $size in $breakpoints-gt {
+//    @include responsive-gt($breakpoint){
+//     @include hide(".hide-gt-#{$breakpoint}");
+//     @include grid-cols(".col-gt-#{$breakpoint}");
+//   }
+// }

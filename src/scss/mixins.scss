@@ -1,0 +1,35 @@
+@mixin hide($selector) {
+  #{$selector} {
+    display: none;
+  }
+}
+@mixin grid-cols($selector) {
+   @for $i from 1 through $grid-columns{
+    #{$selector}-#{$i} {
+      width: 100% * $i / $grid-columns;
+    }
+    @if $i != $grid-columns {
+      #{$selector}-offset-#{$i} {
+        margin-left: 100% * $i / $grid-columns;
+      }
+    }
+  }
+}
+@mixin responsive ($breakpoint) {
+  $sizes: map-get($breakpoints, $breakpoint);
+  @media only screen and (min-width: nth($sizes, 1)) and (max-width: nth($sizes, 2)) {
+     @content;
+  }
+}
+@mixin responsive-gt ($breakpoint) {
+  $size: map-get($breakpoints-gt, $breakpoint);
+  @media only screen and (min-width: $size) {
+     @content;
+  }
+}
+@mixin responsive-lt ($breakpoint) {
+  $size: map-get($breakpoints-lt, $breakpoint);
+  @media only screen and (max-width: $size) {
+     @content;
+  }
+}

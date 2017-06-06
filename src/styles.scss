@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+// Global
+body {
+  font-family: Lato, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Variables + Mixins
+@import "./scss/variables.scss";
+@import "./scss/mixins.scss";
+
+// Designs
+@import "./scss/grid.scss";
+@import "./scss/button.scss";
+@import "./scss/header.scss";
+@import "./scss/banner.scss";
