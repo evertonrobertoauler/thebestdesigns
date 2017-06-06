@@ -33,3 +33,8 @@
      @content;
   }
 }
+@mixin child-of ($selector) {
+  #{$selector} & {
+    @content;
+  }
+}
